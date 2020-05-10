@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <title>Formularz</title>
     <style>
+        body {
+            background-color: aliceblue;
+            background-size: cover;
+        }
         h3 {
             font-weight: bold;
             font-size: medium;
-            margin-left: 100px;
-            margin-top: 30px;
+            margin-left: 10%;
+            margin-top: 10px;
             color: darkcyan;
         }
         h2 {
@@ -33,8 +37,11 @@
         <input type="submit" value="Zatwierdź">
     </form>
 
-    {% block body %}
-    {% endblock body %}
+    {% block content %}
+        {% for item in list_items %}
+        <h2>{{ item[0] }} - {{ item[1] }}</h2>
+        {% endfor %}
+    {% endblock %}
 
 </body>
 </html>

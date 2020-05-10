@@ -19,5 +19,5 @@ def post():
     description = request.form.get('description')
     if len(title) and len(description) > 0:
         list_items.append([title, description])
-    return render_template('hello.html', list_items=list_items)
+    return render_template('index.html', list_items=list_items)
 
