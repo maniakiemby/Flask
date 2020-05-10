@@ -5,6 +5,7 @@ from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
+list_items = []
 
 
 @app.route('/')
@@ -16,4 +17,7 @@ def index():
 def post():
     title = request.form.get('title')
     description = request.form.get('description')
-    return render_template('hello.html', title=title, description=description)
+    if len(title) and len(description) > 0:
+        list_items.append([title, description])
+    return render_template('hello.html', list_items=list_items)
+

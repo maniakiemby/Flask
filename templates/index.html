@@ -3,18 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Formularz</title>
+    <style>
+        h3 {
+            font-weight: bold;
+            font-size: medium;
+            margin-left: 100px;
+            margin-top: 30px;
+            color: darkcyan;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: xx-large;
+            margin-left: 45px;
+            margin-top: 20px;
+            color: darkolivegreen;
+        }
+    </style>
 </head>
 <body>
-    <h4>Dodaj przedmiot</h4>
+    <h3>Dodaj przedmiot</h3>
 
     <form action="{{ url_for('post') }}" method="POST">
-        <input type="text" name="title" placeholder="podaj tytuł">
-        <input type="text" name="description" placeholder="dodaj opis">
+        <label>
+            <input type="text" name="title" placeholder="podaj tytuł">
+        </label>
+        <label>
+            <input type="text" name="description" placeholder="dodaj opis">
+        </label>
         <input type="submit" value="Zatwierdź">
     </form>
 
-    {% block cialo %}
-    {% endblock cialo %}
+    {% block body %}
+    {% endblock body %}
 
 </body>
 </html>
